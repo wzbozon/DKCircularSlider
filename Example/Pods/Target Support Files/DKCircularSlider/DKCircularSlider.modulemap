@@ -1,0 +1,6 @@
+framework module DKCircularSlider {
+  umbrella header "DKCircularSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

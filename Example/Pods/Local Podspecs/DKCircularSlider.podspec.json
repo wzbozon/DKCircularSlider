@@ -1,0 +1,22 @@
+{
+  "name": "DKCircularSlider",
+  "version": "0.1.0",
+  "summary": "Slider that has a form of a circle",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wzbozon/DKCircularSlider",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "denis.kutlubaev@rubetek.com": "kutlubaev.denis@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/denis.kutlubaev@rubetek.com/DKCircularSlider.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DKCircularSlider/Classes/**/*"
+}

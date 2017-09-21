@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DKCircularSlider'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of DKCircularSlider.'
+  s.summary          = 'Slider that has a form of a circle'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/denis.kutlubaev@rubetek.com/DKCircularSlider'
+  s.homepage         = 'https://github.com/wzbozon/DKCircularSlider'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'denis.kutlubaev@rubetek.com' => 'kutlubaev.denis@gmail.com' }

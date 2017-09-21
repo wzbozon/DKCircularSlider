@@ -1,3 +1,4 @@
+platform :ios, '8.0'
 use_frameworks!
 
 target 'DKCircularSlider_Example' do
@@ -7,8 +8,8 @@ target 'DKCircularSlider_Example' do
     inherit! :search_paths
 
     pod 'Specta'
-  pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
+    pod 'Expecta'
+    pod 'FBSnapshotTestCase'
+    pod 'Expecta+Snapshots'
   end
 end
