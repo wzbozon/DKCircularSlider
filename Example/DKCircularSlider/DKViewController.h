@@ -12,5 +12,18 @@
 @interface DKViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet DKCircularSlider *circularSlider;
+@property (nonatomic, weak) IBOutlet UILabel *presetTempLabel;
+@property (nonatomic, weak) IBOutlet UILabel *degreeLabel;
+@property (nonatomic, weak) IBOutlet UISlider *allowedMaxValueSlider;
+
+- (IBAction)increaseValueClicked:(id)sender;
+
+- (IBAction)decreaseValueClicked:(id)sender;
+
+- (IBAction)disableClicked:(id)sender;
+
+- (IBAction)sliderValueChanged:(id)sender;
+
+- (IBAction)allowedMaxValueSliderValueChanged:(id)sender;
 
 @end

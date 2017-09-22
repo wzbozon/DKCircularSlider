@@ -25,42 +25,131 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-RX-DDA" customClass="DKCircularSlider">
                                 <rect key="frame" x="36" y="181.5" width="303" height="303"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-fi-beg">
+                                        <rect key="frame" x="114" y="117" width="75" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Iz5-1f-SXO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="80"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHp-VF-FMw">
+                                        <rect key="frame" x="189" y="117" width="15.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="lY2-6x-WYK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="gbt-fi-beg" firstAttribute="centerY" secondItem="SWz-RX-DDA" secondAttribute="centerY" id="9ZJ-I2-oB1"/>
+                                    <constraint firstItem="MHp-VF-FMw" firstAttribute="leading" secondItem="gbt-fi-beg" secondAttribute="trailing" id="PIB-kI-JSe"/>
+                                    <constraint firstItem="MHp-VF-FMw" firstAttribute="top" secondItem="gbt-fi-beg" secondAttribute="top" id="eaf-Mk-zfI"/>
                                     <constraint firstAttribute="width" secondItem="SWz-RX-DDA" secondAttribute="height" multiplier="1:1" id="wAM-mw-sXa"/>
+                                    <constraint firstItem="gbt-fi-beg" firstAttribute="centerX" secondItem="SWz-RX-DDA" secondAttribute="centerX" id="yRg-6b-zVM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="knobRadius">
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                        <integer key="value" value="10"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                        <integer key="value" value="30"/>
+                                        <integer key="value" value="35"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <integer key="value" value="30"/>
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxAllowedValue">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="enabledColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
+                                        <color key="value" red="0.25098039215686274" green="0.69803921568627447" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="whP-gf-Uak" eventType="valueChanged" id="DKK-Hu-cGy"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wp3-tI-m3z">
+                                <rect key="frame" x="158" y="492.5" width="59" height="30"/>
+                                <state key="normal" title="Increase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="increaseValueClicked:" destination="whP-gf-Uak" eventType="touchUpInside" id="bfd-kB-7wK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAd-vn-AgU">
+                                <rect key="frame" x="154.5" y="530.5" width="65" height="30"/>
+                                <state key="normal" title="Decrease">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decreaseValueClicked:" destination="whP-gf-Uak" eventType="touchUpInside" id="6cX-bW-LTa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-5s-b4e">
+                                <rect key="frame" x="162" y="568.5" width="51" height="30"/>
+                                <state key="normal" title="Disable">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decreaseValueClicked:" destination="whP-gf-Uak" eventType="touchUpInside" id="OWJ-cR-n8H"/>
+                                    <action selector="disableClicked:" destination="whP-gf-Uak" eventType="touchUpInside" id="SN6-RZ-Kil"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="5" maxValue="35" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-GP-KqC">
+                                <rect key="frame" x="14" y="121.5" width="347" height="31"/>
+                                <connections>
+                                    <action selector="allowedMaxValueSliderValueChanged:" destination="whP-gf-Uak" eventType="valueChanged" id="JJJ-iV-fB6"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allowed Maximum Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG8-VZ-Tdi">
+                                <rect key="frame" x="16" y="86" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="6VL-GP-KqC" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="07B-dQ-1RK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SWz-RX-DDA" secondAttribute="trailing" constant="20" id="0Ye-Xi-4WS"/>
+                            <constraint firstItem="WkY-5s-b4e" firstAttribute="top" secondItem="eAd-vn-AgU" secondAttribute="bottom" constant="8" id="0sN-tH-Gbi"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="1Mb-ZV-W6s"/>
+                            <constraint firstItem="6VL-GP-KqC" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="Sqp-Eq-gQb"/>
+                            <constraint firstItem="WkY-5s-b4e" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VOR-HI-e8N"/>
+                            <constraint firstItem="wp3-tI-m3z" firstAttribute="top" secondItem="SWz-RX-DDA" secondAttribute="bottom" constant="8" id="VsQ-PH-OFF"/>
+                            <constraint firstItem="wp3-tI-m3z" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="WpP-gH-HOY"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="width" secondItem="SWz-RX-DDA" secondAttribute="height" multiplier="1:1" id="a6n-Ne-9dL"/>
+                            <constraint firstItem="SWz-RX-DDA" firstAttribute="top" secondItem="6VL-GP-KqC" secondAttribute="bottom" constant="30" id="gn7-mr-7Nw"/>
+                            <constraint firstItem="eAd-vn-AgU" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="lOr-Tp-hkZ"/>
+                            <constraint firstItem="eAd-vn-AgU" firstAttribute="top" secondItem="wp3-tI-m3z" secondAttribute="bottom" constant="8" id="meT-2u-UOx"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="20" id="pTP-Jn-m2R"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="x5E-LZ-kro"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allowedMaxValueSlider" destination="6VL-GP-KqC" id="UjI-Z4-Ubl"/>
                         <outlet property="circularSlider" destination="SWz-RX-DDA" id="hfO-AL-n1y"/>
+                        <outlet property="degreeLabel" destination="MHp-VF-FMw" id="q1i-0w-VyZ"/>
+                        <outlet property="presetTempLabel" destination="gbt-fi-beg" id="e60-NB-ltQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
 </document>
