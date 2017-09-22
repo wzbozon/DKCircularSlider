@@ -21,6 +21,15 @@
     [super viewDidLoad];
     
     self.degreeLabel.text = @"\u00B0C";
+    
+    [self updateTemperatureLabel];
+}
+
+
+- (void)updateTemperatureLabel
+{
+    NSInteger value = self.circularSlider.constantValue ? self.circularSlider.constantValue : self.circularSlider.value;
+    self.presetTempLabel.text = [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 
@@ -60,13 +69,23 @@
 
 - (IBAction)sliderValueChanged:(id)sender
 {
-    self.presetTempLabel.text = [NSString stringWithFormat:@"%ld", (long)self.circularSlider.value];
+    [self updateTemperatureLabel];
 }
 
 
 - (IBAction)allowedMaxValueSliderValueChanged:(id)sender
 {
     self.circularSlider.maxAllowedValue = (long)self.allowedMaxValueSlider.value;
+}
+
+
+- (IBAction)constantValueSwitched:(id)sender
+{
+    UISwitch *switchView = (UISwitch *)sender;
+    
+    self.circularSlider.constantValue = switchView.on ? 5 : 0;
+    
+    [self updateTemperatureLabel];
 }
 
 

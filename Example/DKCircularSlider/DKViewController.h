@@ -26,4 +26,6 @@
 
 - (IBAction)allowedMaxValueSliderValueChanged:(id)sender;
 
+- (IBAction)constantValueSwitched:(id)sender;
+
 @end

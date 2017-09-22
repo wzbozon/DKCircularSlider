@@ -52,6 +52,8 @@ static CGPoint barCenter, knobCenter;
 {
     [super awakeFromNib];
     
+    if (self.constantValue) self.value = self.constantValue;
+    
     if (self.value == 0) self.value = floor((self.maxValue + self.minValue) / 2);
     
     // Calclulate initial angle from initial value
@@ -129,7 +131,7 @@ static CGPoint barCenter, knobCenter;
     size = [maxValueString sizeWithAttributes:attributes];
     [attributedString2 drawAtPoint:CGPointMake(P2.x - (size.width / 2.0), P2.y + 20)];
     
-    if (self.enabled)
+    if (self.enabled && ! self.constantValue)
     {
         // Knob
         CGContextSaveGState(context);
@@ -153,6 +155,16 @@ static CGPoint barCenter, knobCenter;
 }
 
 
+- (void)setConstantValue:(NSInteger)constantValue
+{
+    _constantValue = constantValue;
+    
+    self.maxAllowedValue = self.maxValue;
+    
+    [self setNeedsDisplay];
+}
+
+
 - (void)setMaxAllowedValue:(NSInteger)maxAllowedValue
 {
     _maxAllowedValue = maxAllowedValue;
@@ -165,7 +177,7 @@ static CGPoint barCenter, knobCenter;
 
 - (void)setValue:(NSInteger)value
 {
-    if (! self.enabled) return;
+    if (! self.enabled || self.constantValue) return;
     
     _value = value;
     
@@ -200,7 +212,7 @@ static CGPoint barCenter, knobCenter;
     CGFloat yDist = touchPoint.y - knobCenter.y;
     if (sqrt((xDist * xDist) + (yDist * yDist)) <= self.knobRadius * 3) // if the touch is within the slider knob
     {
-        self.isKnobBeingTouched = self.enabled;
+        self.isKnobBeingTouched = self.enabled && ! self.constantValue;
     }
     
     return YES;

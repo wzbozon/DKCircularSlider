@@ -51,4 +51,9 @@ IB_DESIGNABLE
  */
 @property (nonatomic, assign) BOOL isKnobBeingTouched;
 
+/**
+ If constant value is set, knob is not visible
+ */
+@property (nonatomic, assign) IBInspectable NSInteger constantValue;
+
 @end

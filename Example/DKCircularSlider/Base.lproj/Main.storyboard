@@ -75,6 +75,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
                                         <color key="value" red="0.25098039215686274" green="0.69803921568627447" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="constantValue">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="whP-gf-Uak" eventType="valueChanged" id="DKK-Hu-cGy"/>
@@ -109,34 +112,55 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="5" maxValue="35" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-GP-KqC">
-                                <rect key="frame" x="14" y="121.5" width="347" height="31"/>
+                                <rect key="frame" x="14" y="143.5" width="347" height="31"/>
                                 <connections>
                                     <action selector="allowedMaxValueSliderValueChanged:" destination="whP-gf-Uak" eventType="valueChanged" id="JJJ-iV-fB6"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allowed Maximum Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG8-VZ-Tdi">
-                                <rect key="frame" x="16" y="86" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allowed Maximum Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG8-VZ-Tdi">
+                                <rect key="frame" x="16" y="114.5" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constant Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wb-RF-7JS">
+                                <rect key="frame" x="16" y="85.5" width="125" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="qaR-hZ-SYq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-ET-5QK">
+                                <rect key="frame" x="149" y="81" width="51" height="31"/>
+                                <connections>
+                                    <action selector="constantValueSwitched:" destination="whP-gf-Uak" eventType="valueChanged" id="twY-AT-8M9"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6VL-GP-KqC" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="07B-dQ-1RK"/>
+                            <constraint firstItem="VG8-VZ-Tdi" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="0K8-TF-FmB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SWz-RX-DDA" secondAttribute="trailing" constant="20" id="0Ye-Xi-4WS"/>
                             <constraint firstItem="WkY-5s-b4e" firstAttribute="top" secondItem="eAd-vn-AgU" secondAttribute="bottom" constant="8" id="0sN-tH-Gbi"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="1Mb-ZV-W6s"/>
+                            <constraint firstItem="2ka-ET-5QK" firstAttribute="leading" secondItem="4wb-RF-7JS" secondAttribute="trailing" constant="8" id="8K4-yF-faG"/>
+                            <constraint firstItem="VG8-VZ-Tdi" firstAttribute="top" secondItem="4wb-RF-7JS" secondAttribute="bottom" constant="8" id="MJn-4v-IB7"/>
                             <constraint firstItem="6VL-GP-KqC" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="Sqp-Eq-gQb"/>
                             <constraint firstItem="WkY-5s-b4e" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="VOR-HI-e8N"/>
                             <constraint firstItem="wp3-tI-m3z" firstAttribute="top" secondItem="SWz-RX-DDA" secondAttribute="bottom" constant="8" id="VsQ-PH-OFF"/>
                             <constraint firstItem="wp3-tI-m3z" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="WpP-gH-HOY"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="width" secondItem="SWz-RX-DDA" secondAttribute="height" multiplier="1:1" id="a6n-Ne-9dL"/>
-                            <constraint firstItem="SWz-RX-DDA" firstAttribute="top" secondItem="6VL-GP-KqC" secondAttribute="bottom" constant="30" id="gn7-mr-7Nw"/>
+                            <constraint firstItem="SWz-RX-DDA" firstAttribute="top" secondItem="6VL-GP-KqC" secondAttribute="bottom" constant="8" id="gn7-mr-7Nw"/>
+                            <constraint firstItem="2ka-ET-5QK" firstAttribute="centerY" secondItem="4wb-RF-7JS" secondAttribute="centerY" id="hnG-7X-pzf"/>
                             <constraint firstItem="eAd-vn-AgU" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="lOr-Tp-hkZ"/>
+                            <constraint firstItem="6VL-GP-KqC" firstAttribute="top" secondItem="VG8-VZ-Tdi" secondAttribute="bottom" constant="8" id="lXb-kb-QGm"/>
                             <constraint firstItem="eAd-vn-AgU" firstAttribute="top" secondItem="wp3-tI-m3z" secondAttribute="bottom" constant="8" id="meT-2u-UOx"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="20" id="pTP-Jn-m2R"/>
+                            <constraint firstItem="4wb-RF-7JS" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="tt7-2b-w4f"/>
+                            <constraint firstItem="VG8-VZ-Tdi" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" id="wGF-8h-gGh"/>
                             <constraint firstItem="SWz-RX-DDA" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="x5E-LZ-kro"/>
                         </constraints>
                     </view>
