@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DKCircularSlider'
   s.version          = '1.0.1'
-  s.summary          = 'Slider that has a form of a circle'
+  s.summary          = 'iOS Slider that has a form of a circle written in Objective C'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Slider control in a form of circle written in Objective C. Optional limiter can be set. Can be disabled. Can be set to constant value.
+SiOS Slider that has a form of a circle written in Objective C. Optional limiter can be set. Can be disabled. Can be set to constant value.
                        DESC
 
   s.homepage         = 'https://github.com/wzbozon/DKCircularSlider'
