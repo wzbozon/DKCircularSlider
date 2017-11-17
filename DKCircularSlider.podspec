@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DKCircularSlider'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Slider that has a form of a circle'
 
 # This description is used to generate tags and improve search results.
@@ -18,13 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Slider control in a form of circle written in Objective C. Optional limiter can be set. Can be disabled. Can be set to constant value.
                        DESC
 
   s.homepage         = 'https://github.com/wzbozon/DKCircularSlider'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'http://blog.alwawee.com/wp-content/uploads/2017/11/1.png', 'http://blog.alwawee.com/wp-content/uploads/2017/11/2.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'denis.kutlubaev@rubetek.com' => 'kutlubaev.denis@gmail.com' }
+  s.author           = { 'Dennis Kutlubaev' => 'kutlubaev.denis@gmail.com' }
   s.source           = { :git => 'https://github.com/denis.kutlubaev@rubetek.com/DKCircularSlider.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

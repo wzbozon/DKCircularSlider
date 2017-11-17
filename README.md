@@ -22,7 +22,7 @@ pod 'DKCircularSlider'
 
 ## Author
 
-denis.kutlubaev@rubetek.com, kutlubaev.denis@gmail.com
+Dennis Kutlubaev, kutlubaev.denis@gmail.com
 
 ## License
 
