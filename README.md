@@ -9,6 +9,11 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## ScreenShot
+
+<p align="center"><img src="http://blog.alwawee.com/wp-content/uploads/2017/11/1.png"></p>
+<p align="center"><img src="http://blog.alwawee.com/wp-content/uploads/2017/11/2.png"></p>
+
 ## Requirements
 
 ## Installation
