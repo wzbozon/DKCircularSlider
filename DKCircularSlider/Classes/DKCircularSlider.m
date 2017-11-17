@@ -52,9 +52,9 @@ static CGPoint barCenter, knobCenter;
 {
     [super awakeFromNib];
     
-    if (self.constantValue) self.value = self.constantValue;
+    if (self.constantValue != 0) _value = self.constantValue;
     
-    if (self.value == 0) self.value = floor((self.maxValue + self.minValue) / 2);
+    if (self.value == 0) _value = floor((self.maxValue + self.minValue) / 2);
     
     // Calclulate initial angle from initial value
     float percentDone = 1 - (self.value - self.minValue) / (self.maxValue - self.minValue);
@@ -159,7 +159,7 @@ static CGPoint barCenter, knobCenter;
 {
     _constantValue = constantValue;
     
-    self.maxAllowedValue = self.maxValue;
+    if (self.constantValue != 0) self.maxAllowedValue = self.maxValue;
     
     [self setNeedsDisplay];
 }
@@ -169,8 +169,9 @@ static CGPoint barCenter, knobCenter;
 {
     _maxAllowedValue = maxAllowedValue;
     
-    if (self.value > self.maxAllowedValue) self.value = self.maxAllowedValue;
-    
+    if (_maxAllowedValue < self.minValue) _maxAllowedValue = self.minValue;
+    if (self.value > _maxAllowedValue) self.value = _maxAllowedValue;
+
     [self setNeedsDisplay];
 }
 
