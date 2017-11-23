@@ -5,18 +5,33 @@
 [![License](https://img.shields.io/cocoapods/l/DKCircularSlider.svg?style=flat)](http://cocoapods.org/pods/DKCircularSlider)
 [![Platform](https://img.shields.io/cocoapods/p/DKCircularSlider.svg?style=flat)](http://cocoapods.org/pods/DKCircularSlider)
 
-iOS Slider that has a form of a circle written in Objective C. Optional limiter can be set. Can be disabled. Can be set to constant value.
+iOS circular slider.
+
+IBDesignable and IBInspectables are supported, you can setup a slider right in the Interface builder.
+If you have any problems with it, try Editor / Refresh Views in XCode.
+
+Constant value can be set.
+You can change colors, sizes, min and max values, constant value.
+Optional maximum value limiter can be set.
+
+I use this control with ReactiveCocoa.
+Written in Objective C.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Animation
+
+<p align="center"><img width="300" src="http://blog.alwawee.com/wp-content/uploads/2017/11/DKCircularSlider.gif"></p>
+
 ## ScreenShot
 
-<p align="center"><img src="http://blog.alwawee.com/wp-content/uploads/2017/11/1.png"></p>
-<p align="center"><img src="http://blog.alwawee.com/wp-content/uploads/2017/11/2.png"></p>
+<p align="center"><img width="300" src="http://blog.alwawee.com/wp-content/uploads/2017/11/DKCircularSlider.png"></p>
 
 ## Requirements
+
+Tested on iOS 9 and higher. But probably it supports iOS 8 also.
 
 ## Installation
 
@@ -29,7 +44,7 @@ pod 'DKCircularSlider'
 
 ## Author
 
-Dennis Kutlubaev, kutlubaev.denis@gmail.com
+Denis Kutlubaev, kutlubaev.denis@gmail.com
 
 ## License
 
